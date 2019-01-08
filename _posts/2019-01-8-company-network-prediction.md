@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Automated Technical Indicator"
+title:  "Company Network Prediction"
 date:   2019-01-08
 excerpt: "Minimal, one column Jekyll theme for your blog."
 project: true
