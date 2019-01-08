@@ -11,7 +11,7 @@ locale:             en_US
 url:                https://rajatgarg149.github.io/Moon
 
 # Jekyll
-#permalink:          /:title/
+permalink:          /:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
