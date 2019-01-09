@@ -2,7 +2,7 @@
 layout: post
 title:  "Machine Learning, Stanford, Andrew Ng"
 date:   2019-01-08
-excerpt: "A project on company email network where the future network predictions are drawn using all the measures including Page Rank, Hub and Authority Score, Degree Betweenness, etc."
+excerpt: "This course provides a broad introduction to machine learning, datamining, and statistical pattern recognition."
 course:	true 
 courseurl:	https://github.com/rajatgarg149/ML-Course-Andrew-Ng
 certiurl:	https://www.coursera.org/account/accomplishments/records/KFZKX48CSCWN
