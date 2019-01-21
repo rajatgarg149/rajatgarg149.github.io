@@ -219,10 +219,78 @@ $HADOOP_HOME/sbin/start-dfs.sh
 
 **Yeah, it's done!**
 
-You can check the cluster nodes
+You can check the cluster nodes. Run this command `jps` and also you can browse the namenode web-interface on this link `http://localhost:9870`
+Now create the HDFS directories which we'll need to execute MapReduce jobs. `$HADOOP_HOME/bin/hdfs`. To stop the network `$HADOOP_HOME/sbin/stop-dfs.sh`
 
+**YARN on a single node**
 
+Open the `.bashrc` and append other environment variables `sudo gedit ~/.bashrc`.
 
+```bash
+export HADOOP_MAPRED_HOME=${HADOOP_HOME}
+export HADOOP_COMMON_HOME=${HADOOP_HOME}
+export HADOOP_HDFS_HOME=${HADOOP_HOME}
+export HADOOP_YARN_HOME=${HADOOP_HOME}
+```
 
+**mapred-site.xml**
+
+`sudo gedit $HADOOP_HOME/etc/hadoop/mapred-site.xml`
+
+```python
+#paste these lines between <configuration> </configuration> tags
+<property>
+  <name>mapred.job.tracker</name>
+  <value>localhost:54311</value>
+  <description>The host and port that the MapReduce job tracker runs
+  at.  If "local", then jobs are run in-process as a single map
+  and reduce task.
+  </description>
+</property>
+```
+
+**yarn-site.xml**
+
+`sudo gedit $HADOOP_HOME/etc/hadoop/yarn-site.xml`
+
+```python
+#paste these lines between <configuration> </configuration> tags
+<property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+</property>
+<property>
+        <name>yarn.nodemanager.env-whitelist</name>
+        <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+</property>
+```
+
+**To check the distributed filesystem working properly**
+
+```bash
+#Type and check the results for the following commands
+#list of files and directories on your distributed filesystem
+hdfs dfs -ls
+
+#now create a relative path
+hdfs dfs -mkdir /user
+hdfs dfs -mkdir /user/<username>
+
+#relative and absolute path
+hdfs dfs -mkdir /cluster   #----> This directory will be created in your dfs home i.e., where directory user is!
+
+hdfs dfs -mkdir cluster    #----> This will be created inside /user/<username>
+
+#You can view the added directories in the WebUI too
+#browse localhost:9870
+
+#and check the option Utilities -> Browse filesystem
+#it displays some webhdfs Server Error [This error is shown for the java versions >=9]
+#open and edit hadoop-env.sh
+export HADOOP_OPTS="--add-modules java.activation"
+```
+
+**I hope your hadoop distributed file system is working fine!**
+**In case of trouble or mistake in the code, notify me! - rajatgarg149@gmail.com**
 
 
