@@ -84,7 +84,7 @@ sudo chown -R hduser:hadoop hadoop
 
 Set hadoop and java home environment variables.
 
-```python
+```bash
 #Open the editor
 sudo gedit ~/.bashrc
 
@@ -105,9 +105,9 @@ export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HADOOP_HOME/sbin
 ```
 
-Now edit the hadoop-env.sh and update JAVA_HOME. * You know the drill *
+Now edit the hadoop-env.sh and update JAVA_HOME. *You know the drill*
 
-```python
+```bash
 sudo gedit $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 #update JAVA_HOME (don't append, instead search for likewise line of code, it might be in the comments!)
