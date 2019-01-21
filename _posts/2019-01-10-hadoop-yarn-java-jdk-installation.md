@@ -84,7 +84,7 @@ sudo chown -R hduser:hadoop hadoop
 
 Set hadoop and java home environment variables.
 
-{% highlight css %}
+```python
 #Open the editor
 sudo gedit ~/.bashrc
 
@@ -103,11 +103,11 @@ alias hls="fs -ls"
 export PATH=$PATH:$HADOOP_HOME/bin
 # Add Hadoop sbin/ directory to PATH  
 export PATH=$PATH:$HADOOP_HOME/sbin
-{% endhighlight %}
+```
 
 Now edit the hadoop-env.sh and update JAVA_HOME. * You know the drill *
 
-{% highlight css %}
+```python
 sudo gedit $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 #update JAVA_HOME (don't append, instead search for likewise line of code, it might be in the comments!)
@@ -115,7 +115,7 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 
 #you can also update HADOOP_HOME (not necessary)
 export HADOOP_HOME=/usr/local/hadoop
-{% endhighlight %}
+```
 
 
 ## Start hadoop cluster
