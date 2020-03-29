@@ -36,6 +36,8 @@ GEM
       jekyll (~> 3.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
+    jekyll-seo-tag (2.0.0)
+      jekyll (~> 3.1)
     jekyll-sitemap (0.11.0)
       addressable (~> 2.4.0)
     jekyll-watch (1.5.1)
@@ -51,7 +53,7 @@ GEM
     minima (2.0.0)
     minitest (5.11.3)
     multipart-post (2.0.0)
-    nokogiri (1.10.0)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     octokit (4.13.0)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -83,6 +85,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-gist
   jekyll-mentions
+  jekyll-seo-tag
   jekyll-sitemap
   minima
 
